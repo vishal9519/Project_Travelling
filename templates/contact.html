@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  feedbacks
+{% endblock %}
+
+{% block body %}
+  <div class="carousel-caption d-none d-md-block">
+    <h1 class="my-4 text-center">Feedbacks</h1>
+    <p>Email - mountains@gmail.com</p>
+  </div>
+  <img src="https://random.imagecdn.app/1600/700/?mountains" height="680" weidth="715" class="d-block w-100" alt="..." />
+  <div class="container py-5 mb-3 -center">
+    <form method="post" action="/contact">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control form-control-sm" id="name" name="name" placeholder="Enter your name" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Email address</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Share your experience</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control form-control-lg" row="3" id="reason" name="reason" placeholder="Any feedbacks" />
+        </div>
+      </div>
+
+      <div class="d-grid gap-2 d-md-flex justify-content-md-center py-3">
+        <button class="btn btn-success" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
